@@ -1,5 +1,5 @@
 # Builder stage
-FROM node:20 AS builder
+FROM node:22 AS builder
 WORKDIR /home/node/app
 
 # Install Dependencies
@@ -14,7 +14,7 @@ RUN yarn build
 
 
 # Runner stage
-FROM node:20-alpine AS runner
+FROM node:22 AS runner
 WORKDIR /home/node/app
 ENV NODE_ENV=production
 
